@@ -4,6 +4,13 @@ A custom "modal" alert view for iOS 7+ written in Swift, with a couple basic the
 
 ![BackgroundImage](https://raw.githubusercontent.com/stakes/JSSAlertView/master/gh-demo.gif)
 
+### Changes made by Huong Do [itsmeichigo](https://github.com/itsmeichigo)
+ * Make title label optional
+ * Update UI (smaller buttons)
+ * Optional custom view (NOTE: custom view should have autolayout disabled. Will find a workaround later.)
+ * Optional 3rd button
+ * Update example
+
 ### How to use
 
 The most minimal alert just has a title. 
