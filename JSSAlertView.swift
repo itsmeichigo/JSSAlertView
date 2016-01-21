@@ -203,18 +203,18 @@ class JSSAlertView: UIViewController {
             let textSize = CGSize(width: contentWidth, height: CGFloat(fminf(fmaxf(Float(20.0), Float(realSize.height)), Float(200))))
             self.textView.frame = CGRect(x: self.padding, y: yPos + 5, width: self.alertWidth - (self.padding*2), height: textSize.height + 15)
             yPos += ceil(textView.frame.size.height)
+            
+            yPos += self.padding
         }
         
-        yPos += self.padding
-        
         // position content view
-        if self.contentView != nil {
-            if self.alertWidth - (self.padding*2) > self.contentView.frame.size.width {
-                let currentFrame = CGRect(x: contentView.frame.origin.x, y: yPos, width: contentView.frame.size.width, height: contentView.frame.size.height)
+        if contentView != nil {
+            if alertWidth > contentView.frame.size.width {
+                let currentFrame = CGRect(x: 0, y: yPos, width: contentView.frame.size.width, height: contentView.frame.size.height)
                 contentView.frame = currentFrame
                 contentView.center = CGPointMake(containerView.frame.size.width/2, contentView.center.y)
             } else {
-                self.contentView.frame = CGRect(x: self.padding, y: yPos, width: self.alertWidth - (self.padding*2), height: self.contentView.frame.size.height)
+                contentView.frame = CGRect(x: 0, y: yPos, width: alertWidth, height: contentView.frame.size.height)
             }
             
             yPos += ceil(self.contentView.frame.size.height)
